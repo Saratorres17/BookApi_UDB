@@ -34,4 +34,8 @@ src/main/resources/application.properties
 spring.datasource.url=jdbc:mysql://localhost:3306/bookdb
 spring.datasource.username=root
 spring.datasource.password=
-<img width="487" height="191" alt="API" src="https://github.com/user-attachments/assets/bac3d80b-da76-42bc-8ad9-231b79685ecb" />
+
+
+
+<img width="487" height="191" alt="API" src="https://github.com/user-attachments/assets/c3e5ce63-28fa-414f-a06d-0944b66bb3a9" />
+
