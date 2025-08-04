@@ -1,41 +1,96 @@
-# Book API UDB
+📘 Book API UDB – Book Management Project
+This project is called 📘 Book API UDB, a web application built using Spring Boot. Its goal is to manage a book catalog through a RESTful API, which can be used by any HTTP client such as Postman, a frontend interface, or another system.
 
-A simple RESTful API built with Spring Boot for managing a collection of books.  
-This project was developed in pairs as part of a university assignment.
+✨ Main Features
+The API supports the four basic CRUD operations:
 
-## 📚 Features
+➕ Add books
+Submit new books with a title, author, and publication year.
 
-- ✅ Add new books  
-- ✅ List all books  
-- ✅ Search books by title  
-- ✅ Delete books by ID
+📋 List all books
+Retrieve all registered books from the database.
 
-## 🚀 Getting Started
+🔍 Search books by title
+Find books that contain a specific word or phrase in their title.
 
-### 📋 Prerequisites
+🗑️ Delete books by ID
+Remove a specific book using its unique identifier.
 
-Make sure you have the following installed:
+🧱 Project Structure
+The project is organized using a layered architecture and package structure:
 
-- Java 17+  
-- Maven  
-- MySQL  
-- Postman (optional, for testing)
+🧩 Model → Contains the Book class (the data model).
 
-### 🛠️ How to Run the Project
+🗃️ Repository → Contains BookRepository (data access using JPA).
 
-1. **Clone the repository**
+🧠 Service → Contains BookService (business logic).
 
-```bash
+🌐 Controller → Contains BookController (API endpoints).
+
+🛠️ All configuration, including the database and server port, is managed in the application.properties file.
+
+⚙️ Requirements
+To run the project, make sure the following are installed:
+
+☕ Java 17 or higher
+
+🧪 Maven
+
+🗄️ MySQL Server
+
+🔧 Postman (optional, for testing)
+
+🚀 How to Run the Project
+📥 Clone the GitHub repository:
+
+bash
+Copiar
+Editar
 git clone https://github.com/your-username/bookApiUDB.git
 cd bookApiUDB
+🗂️ Create a MySQL database named bookdb.
 
-src/main/resources/application.properties
+🛠️ Edit the application.properties file with your database credentials:
 
+properties
+Copiar
+Editar
 spring.datasource.url=jdbc:mysql://localhost:3306/bookdb
 spring.datasource.username=root
 spring.datasource.password=
+▶️ Start the application:
 
+bash
+Copiar
+Editar
+./mvnw spring-boot:run
+🔗 The API will be running at:
+http://localhost:8081
 
+📬 How to Use the API (with Postman)
+➕ Add a book
 
-<img width="487" height="191" alt="API" src="https://github.com/user-attachments/assets/c3e5ce63-28fa-414f-a06d-0944b66bb3a9" />
+POST → http://localhost:8081/api/books
+
+Body (JSON):
+
+json
+Copiar
+Editar
+{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "publicationYear": 1937
+}
+📋 List all books
+
+GET → http://localhost:8081/api/books
+
+🔍 Search books by title
+
+GET → http://localhost:8081/api/books/search?title=hobbit
+
+🗑️ Delete a book by ID
+
+DELETE → http://localhost:8081/api/books/1
 
